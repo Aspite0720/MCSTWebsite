@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCST News and Events</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: rgba(0, 51, 102, 0.85);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .home-icon {
+            position: absolute;
+            left: 20px;
+            font-size: 1.8em;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #00509e;
+        }
+
+        /* News Section Styling */
+        .news-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .news-gallery {
+            display: flex;
+            gap: 15px;
+        }
+
+        .main-image {
+            flex: 2;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .small-images {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .small-images img {
+            height: 125px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Article Text Styling */
+        .article-section {
+            background-color: white;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-section h2 {
+            color: #003366;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .article-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1em;
+            margin-top: 50px;
+        }
+
+        .footer a {
+            color: #f4a261;
+            text-decoration: none;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #e76f51;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="C:\Users\63907\Desktop\MCST Website\scratch2.html" class="home-icon"><i class="fas fa-home"></i></a>
+        <a href="#news">News and Events</a>
+        <a href="C:\Users\63907\Documents\courses1.html">Courses</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Info</a>
+    </div>
+
+    <!-- News Section -->
+    <div class="news-section" id="news">
+        <div class="news-gallery">
+            <!-- Main Image -->
+            <div class="main-image">
+                <img src="C:\Users\63907\Desktop\MCST Website\assets\asdasdsa.jpg" alt="Main Event">
+            </div>
+            <!-- Small Images -->
+            <div class="small-images">
+                <img src="C:\Users\63907\Pictures\Camera Roll\WIN_20241128_18_22_27_Pro.jpg" alt="News 1">
+                <img src="C:\Users\63907\Desktop\MCST Website\assets\465802515_562028686614536_1189246482776606929_n12.jpg" alt="News 2">
+                <img src="C:\Users\63907\Desktop\MCST Website\assets\465802515_562028686614536_1189246482776606929_n.jpg" alt="News 3">
+            </div>
+        </div>
+
+        <!-- Article Sections -->
+        <div class="article-section">
+            <h2>Exciting Event at MCST</h2>
+            <p>
+                ---
+            </p>
+        </div>
+
+        <div class="article-section">
+            <h2>MCST</h2>
+            <p>
+               ---
+            </p>
+        </div>
+
+        <div class="article-section">
+            <h2>---</h2>
+            <p>
+                ---
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 MCST. All rights reserved. <a href="#home">Back to Top</a></p>
+    </div>
+
+</body>
+</html>
