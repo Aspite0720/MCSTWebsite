@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCST Courses</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: rgba(0, 51, 102, 0.85);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .home-icon {
+            position: absolute;
+            left: 20px;
+            font-size: 1.8em;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 15px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #00509e;
+        }
+
+        /* Banner Styling */
+        .banner {
+            width: 100%;
+            height: 100vh;
+            background: url("C:\Users\63907\Desktop\MCST Website\assets\mcstbg.jpg") 
+                no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .banner h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+	    .banner p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+
+          .courses-section h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #003366;
+        }
+
+        /* Course Container - Vertical Layout (1 course per section) */
+        .course-container {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center;
+            justify-content: center;
+            gap: 20px; /* Add spacing between course items */
+            padding: 40px 60px;  /* More generous padding on the sides */
+            height: auto;  /* Adjust height to be more natural */
+            min-height: 600px; /* Minimum height to make it a bit taller */
+        }
+
+        /* Individual Course Item */
+        .course-item {
+            background-color: transparent;  /* Light background for each course */
+            border-radius: 8px;
+            padding: 40px;  /* Increased padding for larger courses */
+            width: 100%;  /* Make course items take up most of the screen width */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center; /* Center the text and content */
+        }
+
+        .course-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 2);
+        }
+
+        .course-info {
+            margin-bottom: 15px;
+        }
+
+        .course-info h3 {
+            font-size: 2em;  /* Increased font size for course titles */
+            margin-bottom: 10px;
+            color: #003366;
+        }
+
+        .course-info p {
+            font-size: 1.2em;  /* Slightly larger font for descriptions */
+            color: #555;
+        }
+
+        .course-image {
+            height: 180px;  /* Larger image size */
+            width: 180px;
+            border-radius: 8px;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            color: #555;
+        }
+
+        /* Responsive Design for Courses Section */
+        @media (max-width: 900px) {
+            .course-item {
+                width: 100%;  /* Adjust the width for medium-sized screens */
+                padding: 30px;  /* Adjust padding for smaller screens */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .course-item {
+                width: 100%;  /* Ensure the course items take full width on smaller screens */
+                padding: 20px;  /* Adjust padding for very small screens */
+            }
+
+            .course-info h3 {
+                font-size: 1.6em;  /* Adjust title size for smaller screens */
+            }
+
+            .course-info p {
+                font-size: 1.1em;  /* Adjust description size for smaller screens */
+            }
+
+            .course-image {
+                height: 150px;  /* Adjust image size for smaller screens */
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="C:\Users\63907\Desktop\MCST Website\scratch2.html" class="home-icon"><i class="fas fa-home"></i></a>
+        <a href="C:\Users\63907\Documents\news.html">News and Events</a>
+        <a href="C:\Users\63907\Documents\courses.html">Courses</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Info</a>
+    </div>
+
+    <!-- Courses Section -->
+    <div class="courses-section" id="courses">
+        <h1>Courses Offered</h1>
+        <div class="course-container">
+            <!-- Course Item 1 -->
+            <div class="course-item">
+                <div class="course-info">
+                    <h3>BSIS (Bachelor of Science in Information Systems)</h3>
+                    <p>Explore the dynamic world of information systems, combining technology and business to solve real-world problems.</p>
+                </div>
+                <div class="course-image">Image</div>
+            </div>
+            <!-- Course Item 2 -->
+            <div class="course-item">
+                <div class="course-info">
+                    <h3>BS Mathematics</h3>
+                    <p>Delve deep into advanced mathematical theories and applications to build a strong foundation for future endeavors.</p>
+                </div>
+                <div class="course-image">Image</div>
+            </div>
+            <!-- Course Item 3 -->
+            <div class="course-item">
+                <div class="course-info">
+                    <h3>AB Communication</h3>
+                    <p>Learn the art of effective communication in various mediums, preparing for careers in media, public relations, and beyond.</p>
+                </div>
+                <div class="course-image">Image</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
