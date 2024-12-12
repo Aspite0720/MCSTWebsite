@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | MCST Website</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: rgba(0, 51, 102, 0.85);
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .home-icon {
+            position: absolute;
+            left: 20px;
+            font-size: 1.8em;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            margin: 0 10px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #00509e;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Banner Styling */
+        .banner {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url(file:///C:/Users/63907/Desktop/MCST%20Website%20Final/Pictures%20Used/467458786_1613470219572429_8727681247605989920_n.jpg) 
+                no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+	}
+
+        .banner h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .banner p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+
+        .logo {
+            margin-top: 20px;
+            width: 150px;
+            height: auto;
+        }
+
+        /* News Section Styling */
+        #news {
+	    width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+	    	    background: linear-gradient(to bottom right, #f0f0f0, #003366 100%);
+
+	    
+        }
+
+        #news .content {
+            width: 48%;
+            padding: 20px;
+            background-color: transparent;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+            backdrop-filter: blur(5px); /* Added blur effect for a glassy feel */
+            position: relative;
+            z-index: 2;
+            margin-top: 50px; /* Adjusted to lift it higher */
+        }
+
+        #news h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+	    color: #003366;
+
+        }
+
+        #news p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #003366;
+
+        }
+
+        /* Slideshow Container */
+        .slideshow-container {
+            position: relative;
+            width: 48%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slideshow-container img.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .slideshow-container .prev,
+        .slideshow-container .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 18px;
+            padding: 10px 15px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+        }
+
+        .slideshow-container .prev {
+            left: 10px;
+        }
+
+        .slideshow-container .next {
+            right: 10px;
+        }
+
+           /* Courses Section Styling */
+        #courses {
+	    width: 100%;
+            height: 100vh;
+            padding: 60px 20px;
+	    background: linear-gradient(to top right, #f0f0f0, #003366 100%);
+	    
+        }
+
+        .course-box-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+	    min-height: 400px;
+
+        }
+
+        .course-box {
+	    display: flex;
+            width: 30%;
+    	    text-align: center; /* Center the text */
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-box a {
+            text-decoration: none;
+            color: inherit;
+    	    text-align: center; /* Center the text */
+
+	  
+        }
+
+        .course-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+	#courses h2 {
+  	 font-size: 2em;
+         margin-bottom: 15px;
+         text-align: center; /* Add this line to center the text */
+         color: #003366;
+
+}
+
+        #courses h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+	    text-align: center;
+            color: #003366;
+        }
+
+        #courses p {
+	    text-align: center;
+            font-size: 1.1em;
+		
+
+        }
+
+        /* About Section Styling */
+       #about {
+    width: 100%;
+    height: 100vh;
+    padding: 60px 20px;
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text inside the content */
+	 	background: linear-gradient(to bottom right, #f0f0f0, #003366 100%);
+
+	
+}
+
+#about .content {
+    width: 48%;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    backdrop-filter: blur(5px); /* Added blur effect for a glassy feel */
+    position: relative;
+    z-index: 2;
+    margin-top: -20px; /* Adjusted to lift it higher */
+    color: #003366;
+
+}  /* CTA Button Styling */
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #003366;
+            color: white;
+            font-size: 1.1em;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #003366;
+        }
+
+
+
+        /* Contact Section Styling */
+        #contact {
+            width: 100%;
+            height: 100vh;	
+            padding: 60px 20px;
+	    background: linear-gradient(to top right, #003366, #f0f0f0 100%);
+	     display: flex; /* Use Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text inside the content */
+
+        }
+
+        #contact .content {
+            width: 48%;
+            padding: 20px;
+            background-color: transparent;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+            backdrop-filter: blur(5px); /* Added blur effect for a glassy feel */
+            position: relative;
+            z-index: 2;
+            margin-top: -20px; /* Adjusted to lift it higher */
+            color: #003366;
+ 	
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+
+        .footer a {
+            color: #f4a261;
+            text-decoration: none;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #e76f51;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            #news, #courses, #about, #contact {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .slideshow-container {
+                width: 100%;
+                height: 250px;
+            }
+
+            #news .content, #courses .content, #about .content, #contact .content {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#banner" class="home-icon"><i class="fas fa-home"></i></a>
+        <a href="#news">News and Events</a>
+        <a href="#courses">Courses</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Info</a>
+    </div>
+
+    <!-- Banner Section -->
+    <div id="banner" class="banner">
+        <h1>Welcome to MCST</h1>
+        <p>MCST offers FREE COLLEGE EDUCATION, fully subsidized by the Mandaluyong LGU.</p>
+        <img src="C:/Users/63907/Downloads/467456599_8906091179470284_6240005973033672877_n-removebg-preview.png" alt="MCST Logo" class="logo">
+    </div>
+
+    <!-- News Section -->
+    <section id="news">
+        <div class="content">
+            <h2>News and Events</h2>
+            <p>Stay updated with the latest happenings at MCST.</p>
+        </div>
+        <div class="slideshow-container">
+            <a href="C:\Users\63907\Desktop\MCST Website Final\news.html">
+                <img src="C:\Users\63907\Desktop\MCST Website Final\Pictures Used\asdasdsa.jpg" class="active" alt="News 1">
+            </a>
+            <a href="C:\Users\63907\Desktop\MCST Website Final\news.html">
+                <img src="C:\Users\63907\Desktop\MCST Website Final\Pictures Used\465802515_562028686614536_1189246482776606929_n12.jpg" alt="News 2">
+            </a>
+            <a href="C:\Users\63907\Desktop\MCST Website Final\news.html">
+                <img src="C:\Users\63907\Desktop\MCST Website\assets\465802515_562028686614536_1189246482776606929_n.jpg" alt="News 3">
+           </a>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </section>
+	<br>
+<hr>
+	
+
+     <!-- Courses Section -->
+    <section id="courses">
+        <div class="content">
+            <h2>Courses</h2>
+            <p>Explore the wide range of programs offered at MCST, including BSIS, BS Math, and ABCOMM.</p>
+        </div>
+	<br>
+<br>
+        <!-- Course Boxes -->
+        <div class="course-box-container">
+            <div class="course-box">
+                <a href="C:\Users\63907\Desktop\MCST Website Final\courses1.html">
+                    <i class="fas fa-laptop"></i>
+                    <h3>BSIS</h3>
+                    <p>Business Systems Information Science</p>
+                </a>
+            </div>
+            <div class="course-box">
+                <a href="C:\Users\63907\Desktop\MCST Website Final\courses1.html">
+                    <i class="fas fa-calculator"></i>
+                    <h3>BS Math</h3>
+                    <p>Bachelor of Science in Mathematics</p>
+                </a>
+            </div>
+            <div class="course-box">
+                <a href="C:\Users\63907\Desktop\MCST Website Final\courses1.html">
+                    <i class="fas fa-message"></i>
+                    <h3>ABCOMM</h3>
+                    <p>Associate in Business Communication</p>
+                </a>
+            </div>
+        </div>
+    </section>
+<br>
+<hr>
+    <!-- About Section -->
+    <section id="about">
+        <div class="content">
+            <h2>About Us</h2>
+            <p>MCST is committed to providing quality education, innovation, and real-world application to prepare our students for success in their careers.</p>
+            <a href="C:\Users\63907\Desktop\MCST Website Final\aboutus.html" class="cta-button">Know More About Us</a>
+
+        </div>
+    </section>
+<br>
+<hr>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>For inquiries, please feel free to reach out through the contact information provided below. We're always happy to assist!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 MCST | All Rights Reserved.</p>
+    </div>
+
+    <script>
+        // Slideshow functionality
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slideshow-container img");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+
+        function showSlide(n) {
+            slides[slideIndex].classList.remove("active");
+            slideIndex = (n + slides.length) % slides.length;
+            slides[slideIndex].classList.add("active");
+        }
+
+        prevBtn.addEventListener("click", () => showSlide(slideIndex - 1));
+        nextBtn.addEventListener("click", () => showSlide(slideIndex + 1));
+
+        setInterval(() => showSlide(slideIndex + 1), 5000);
+    </script>
+
+</body>
+</html>
